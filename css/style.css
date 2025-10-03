@@ -1,0 +1,387 @@
+/* --- VARIABLES Y ESTILOS GENERALES (TEMA OSCURO) --- */
+:root {
+    --color-primario: #3498db; /* Un azul más brillante para que resalte en fondo oscuro */
+    --color-secundario: #F5A623; /* Naranja para botones y acentos, se mantiene */
+    --color-texto: #f1f1f1; /* Texto principal casi blanco */
+    --color-fondo-principal: #000000; /* Fondo principal negro */
+    --color-fondo-secciones: #1c1c1c; /* Fondo para tarjetas y header (gris muy oscuro) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    color: var(--color-primario);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: #111; /* Texto oscuro en el botón para mejor contraste con el naranja */
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e09415;
+}
+
+
+/* --- HEADER / NAVEGACIÓN --- */
+.navbar {
+    background-color: var(--color-fondo-secciones);
+    border-bottom: 1px solid #333; /* Reemplazamos la sombra con un borde sutil */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--color-primario);
+}
+
+
+/* --- SECCIÓN HERO --- */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Texto blanco puro aquí */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+
+/* --- SECCIÓN PRODUCTOS --- */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.producto-card {
+    background-color: var(--color-fondo-secciones);
+    border-radius: 8px;
+    border: 1px solid #333; /* Borde sutil para definir la tarjeta */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primario);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    margin: 20px 0 10px;
+}
+
+.producto-card p {
+    padding: 0 20px 20px;
+    opacity: 0.8;
+}
+
+
+/* --- SECCIÓN GALERÍA --- */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+
+/* --- SECCIÓN NOSOTROS --- */
+/* No necesita fondo extra, usará el del body */
+
+.nosotros-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nosotros-img, .nosotros-texto {
+    flex: 1;
+}
+
+.nosotros-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.nosotros-texto h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.nosotros-texto ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.nosotros-texto li {
+    margin-bottom: 10px;
+}
+
+.nosotros-texto .fa-check {
+    color: var(--color-secundario);
+    margin-right: 10px;
+}
+
+
+/* --- SECCIÓN CONTACTO --- */
+.contacto-flex {
+    display: flex;
+    gap: 40px;
+    background-color: var(--color-fondo-secciones);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.info-contacto, .formulario-contacto {
+    flex: 1;
+}
+
+.info-contacto ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.info-contacto li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.info-contacto i {
+    color: var(--color-primario);
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.info-contacto a {
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: var(--color-texto);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.formulario-contacto .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* --- WHATSAPP FLOTANTE --- */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-fondo-secciones);
+    color: var(--color-texto);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+}
+
+/* --- ESTILOS ADICIONALES PARA EL FOOTER --- */
+.designer-credit {
+    font-size: 0.9em;
+    margin-top: 8px;
+    opacity: 0.7;
+}
+
+.designer-credit a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.designer-credit a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- RESPONSIVE (PARA CELULARES Y TABLETS) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-fondo-secciones);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .nosotros-flex, .contacto-flex {
+        flex-direction: column;
+    }
+}

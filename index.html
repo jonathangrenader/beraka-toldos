@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beraka Toldos - Venta e Instalación de Toldos</title>
+    <meta name="description" content="En Beraka Toldos somos especialistas en la venta e instalación de toldos, cerramientos y protección solar para hogares y comercios. Presupuestos sin cargo.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo"><img src="images/logo.png" alt="Logo de Beraka Toldos"></a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Soluciones a medida en protección solar</h1>
+                <p>Diseño, calidad y durabilidad para tus espacios exteriores.</p>
+                <a href="#contacto" class="btn">Pedí tu presupuesto sin cargo</a>
+            </div>
+        </section>
+
+        <section id="productos" class="container section">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="images/producto1.jpg" alt="Toldos de Brazos Invisibles">
+                    <h3>Brazos Invisibles</h3>
+                    <p>Ideales para balcones, terrazas y jardines. Proporcionan sombra sin obstáculos visuales.</p>
+                </div>
+                <div class="producto-card">
+                    <img src="images/producto2.jpg" alt="Toldos Verticales">
+                    <h3>Toldos Verticales</h3>
+                    <p>Protección frontal contra el sol y el viento. Perfectos para cerramientos de galerías.</p>
+                </div>
+                <div class="producto-card">
+                    <img src="images/producto3.jpg" alt="Cerramientos de Lona">
+                    <h3>Cerramientos de Lona</h3>
+                    <p>Amplía tus espacios y disfrútalos todo el año. Lona transparente o de color a elección.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="galeria" class="container section">
+            <h2>Nuestros Trabajos</h2>
+            <div class="galeria-grid">
+                <img src="images/galeria1.jpg" alt="Trabajo realizado 1">
+                <img src="images/galeria2.jpg" alt="Trabajo realizado 2">
+                <img src="images/galeria3.jpg" alt="Trabajo realizado 3">
+                <img src="images/galeria4.jpg" alt="Trabajo realizado 4">
+                <img src="images/galeria5.jpg" alt="Trabajo realizado 5">
+                <img src="images/galeria6.jpg" alt="Trabajo realizado 6">
+                <img src="images/galeria7.jpg" alt="Trabajo realizado 7">
+                <img src="images/galeria8.jpg" alt="Trabajo realizado 8">
+            </div>
+        </section>
+
+        <section id="nosotros" class="section nosotros-section">
+            <div class="container nosotros-flex">
+                <div class="nosotros-img">
+                    <img src="images/nosotros.jpg" alt="Equipo de Beraka Toldos">
+                </div>
+                <div class="nosotros-texto">
+                    <h2>Más de 15 años de experiencia</h2>
+                    <p>Somos una empresa familiar dedicada a ofrecer soluciones en protección solar. Nuestro compromiso es con la calidad de los materiales y la satisfacción de nuestros clientes. Brindamos asesoramiento personalizado para cada proyecto.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Asesoramiento profesional</li>
+                        <li><i class="fas fa-check"></i> Materiales de primera calidad</li>
+                        <li><i class="fas fa-check"></i> Garantía en todos los trabajos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="container section">
+            <h2>Contactanos</h2>
+            <div class="contacto-flex">
+                <div class="info-contacto">
+                    <h3>Información de Contacto</h3>
+                    <p>¿Tenés una consulta o querés un presupuesto? ¡Escribinos!</p>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+5491127424393">11 2742-4393</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5491127424393" target="_blank">11 2742-4393</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:consultas@berakatoldos.com.ar">consultas@berakatoldos.com.ar</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> José Hernández 5314, San Martín</li>
+                    </ul>
+                </div>
+                <div class="formulario-contacto">
+                    <h3>Envianos tu consulta</h3>
+                    <form name="contact" netlify>
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <a href="https://wa.me/5491127424393" class="whatsapp-flotante" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Beraka Toldos. Todos los derechos reservados.</p>
+            <p class="designer-credit">Diseñado por <a href="#" target="_blank">ANSTUDIOS</a> 2025</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
