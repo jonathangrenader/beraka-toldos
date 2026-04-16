@@ -323,8 +323,56 @@ footer {
     background-color: var(--color-fondo-secciones);
     color: var(--color-texto);
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0;
     border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-contact ul {
+    list-style: none;
+    text-align: left;
+}
+
+.footer-contact li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    color: var(--color-primario);
+    font-size: 18px;
+    width: 25px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--color-primario);
 }
 
 .designer-credit {
@@ -385,5 +433,18 @@ footer {
     /* MODIFICACIÓN CRO: Ocultar el formulario en móviles para forzar el uso de WhatsApp */
     .formulario-contacto {
         display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact ul {
+        text-align: center;
+    }
+
+    .footer-contact li {
+        justify-content: center;
     }
 }
