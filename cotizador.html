@@ -140,7 +140,7 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px; /* Reducimos el padding interno para ganar espacio vertical */
+            padding: 10px 20px; /* Reducimos el padding vertical para ganar espacio */
             background: #fff;
             box-sizing: border-box;
             color: #333;
@@ -151,14 +151,14 @@
             width: 220px;
             height: auto;
             object-fit: contain;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
         .pdf-header {
             text-align: center;
             border-bottom: 3px solid #3498db;
             padding-bottom: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .pdf-logo {
@@ -183,8 +183,8 @@
         }
 
         .pdf-section {
-            margin-bottom: 15px;
-            padding: 15px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
             background: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #3498db;
@@ -253,12 +253,12 @@
         }
 
         .pdf-amount {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
         }
 
         .pdf-footer {
-            margin-top: 25px;
+            margin-top: 10px;
             padding-top: 15px;
             border-top: 2px solid #e0e0e0;
             text-align: center;
@@ -453,7 +453,7 @@
             
             // 3. Opciones del PDF:
             const opt = {
-                margin: [10, 10, 10, 10], // 10mm de margen real en la hoja A4
+                margin: [5, 10, 5, 10], // 5mm top/bottom, 10mm left/right para ganar espacio
                 filename: `Presupuesto_Beraka.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { 
