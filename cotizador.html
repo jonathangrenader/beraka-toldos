@@ -137,16 +137,14 @@
         }
 
         #pdf-content {
-            width: 794px;
-            max-width: 100%;
-            height: max-content;
+            width: 100%;
+            max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 20mm;
-            position: relative;
+            padding: 20px; /* Reducimos el padding interno para ganar espacio vertical */
+            background: #fff;
+            box-sizing: border-box;
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-sizing: border-box;
         }
 
         .logo-presupuesto {
@@ -159,8 +157,8 @@
         .pdf-header {
             text-align: center;
             border-bottom: 3px solid #3498db;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .pdf-logo {
@@ -181,12 +179,12 @@
         }
 
         .pdf-body {
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         .pdf-section {
-            margin-bottom: 25px;
-            padding: 20px;
+            margin-bottom: 15px;
+            padding: 15px;
             background: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #3498db;
@@ -194,15 +192,15 @@
 
         .pdf-section h3 {
             color: #3498db;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .pdf-client-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
         .pdf-info-item {
@@ -220,48 +218,48 @@
 
         .pdf-work-details {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border: 1px solid #e0e0e0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .pdf-materials {
             background: #e8f4f8;
-            padding: 15px;
+            padding: 10px;
             border-radius: 6px;
-            margin-top: 15px;
+            margin-top: 10px;
             border-left: 3px solid #F5A623;
         }
 
         .pdf-materials h4 {
             color: #F5A623;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .pdf-total {
             text-align: center;
             background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
-            margin: 30px 0;
+            margin: 20px 0;
             box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
         }
 
         .pdf-total h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
         }
 
         .pdf-amount {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
         }
 
         .pdf-footer {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 15px;
             border-top: 2px solid #e0e0e0;
             text-align: center;
             color: #666;
@@ -447,17 +445,23 @@
                 maximumFractionDigits: 2
             });
 
-            // Configurar opciones de html2pdf
+            // Antes de generar el PDF, forzamos el scroll arriba de todo para evitar el bug de recorte
+            window.scrollTo(0, 0);
+
             const opt = {
-                margin: 0, // Usamos 0 porque el padding ya está en el CSS de #pdf-content
-                filename: `Presupuesto_Beraka_${clienteNombre.replace(/\s+/g, '_')}.pdf`,
+                margin: [10, 10, 10, 10], // 10mm de margen real en la hoja A4
+                filename: `Presupuesto_Beraka.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, windowWidth: 794 }, // Forzar el ancho de captura
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true,
+                    scrollY: 0, // CRÍTICO: Soluciona el recorte
+                    scrollX: 0  // CRÍTICO: Soluciona el recorte
+                },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
-            // Generar y descargar PDF
-            const element = document.getElementById('pdf-content');
+            // Generar PDF
             html2pdf().set(opt).from(element).save();
         }
 
