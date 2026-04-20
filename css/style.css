@@ -325,9 +325,9 @@ p {
     max-width: 600px;
     background-color: transparent;
     border-radius: 12px;
-    overflow: hidden;
     transform: scale(0.8);
     transition: transform 0.3s ease;
+    overflow: visible;
 }
 
 .popup-overlay.active .popup-content {
@@ -344,8 +344,8 @@ p {
 
 .popup-close {
     position: absolute;
-    top: -15px;
-    right: -15px;
+    top: 10px;
+    right: 10px;
     background-color: var(--color-primario);
     color: white;
     border: none;
@@ -493,11 +493,12 @@ p {
     .popup-content {
         width: 95%;
         max-width: 400px;
+        overflow: visible;
     }
 
     .popup-close {
-        top: -10px;
-        right: -10px;
+        top: 10px;
+        right: 10px;
         width: 35px;
         height: 35px;
         font-size: 16px;

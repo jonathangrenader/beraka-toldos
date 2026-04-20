@@ -137,14 +137,15 @@
         }
 
         #pdf-content {
-            max-width: 210mm;
+            width: 794px;
+            min-height: 1122px;
             margin: 0 auto;
             background: white;
             padding: 40mm;
-            min-height: 297mm;
             position: relative;
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
         }
 
         .pdf-header {
@@ -344,7 +345,7 @@
             <!-- Plantilla del Presupuesto -->
             <div id="pdf-content">
                 <div class="pdf-header">
-                    <img src="images/logo.png" alt="Beraka Toldos" class="pdf-logo">
+                    <img src="images/logo_dark.png" alt="Beraka Toldos" class="pdf-logo">
                     <div class="pdf-title">PRESUPUESTO OFICIAL</div>
                     <div class="pdf-date" id="pdfFecha">Fecha: --</div>
                 </div>
@@ -440,7 +441,8 @@
 
             // Configurar opciones de html2pdf
             const opt = {
-                margin: 10,
+                margin: [10, 10, 10, 10],
+                pagebreak: { mode: 'avoid-all' },
                 filename: `Presupuesto_Beraka_${clienteNombre.replace(/\s+/g, '_')}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true },
