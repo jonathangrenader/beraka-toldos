@@ -138,14 +138,22 @@
 
         #pdf-content {
             width: 794px;
-            min-height: 1122px;
+            max-width: 100%;
+            height: max-content;
             margin: 0 auto;
             background: white;
-            padding: 40mm;
+            padding: 20mm;
             position: relative;
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             box-sizing: border-box;
+        }
+
+        .logo-presupuesto {
+            width: 220px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
         }
 
         .pdf-header {
@@ -345,7 +353,7 @@
             <!-- Plantilla del Presupuesto -->
             <div id="pdf-content">
                 <div class="pdf-header">
-                    <img src="images/logo_dark.png" alt="Beraka Toldos" class="pdf-logo">
+                    <img src="images/logo_dark.png" alt="Beraka Toldos" class="logo-presupuesto">
                     <div class="pdf-title">PRESUPUESTO OFICIAL</div>
                     <div class="pdf-date" id="pdfFecha">Fecha: --</div>
                 </div>
@@ -441,11 +449,10 @@
 
             // Configurar opciones de html2pdf
             const opt = {
-                margin: [10, 10, 10, 10],
-                pagebreak: { mode: 'avoid-all' },
+                margin: 0, // Usamos 0 porque el padding ya está en el CSS de #pdf-content
                 filename: `Presupuesto_Beraka_${clienteNombre.replace(/\s+/g, '_')}.pdf`,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
+                html2canvas: { scale: 2, useCORS: true, windowWidth: 794 }, // Forzar el ancho de captura
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
